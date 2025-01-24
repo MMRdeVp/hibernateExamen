@@ -1,0 +1,30 @@
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Dialecto adecuado para MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Conexión a la base de datos -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/empresa</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+        <!-- Configuración de caché -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+
+        <!-- Configuración de la base de datos -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mostrar SQL en la consola -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Transacciones -->
+        <property name="hibernate.transaction.coordinator_class">jdbc</property>
+
+        <!-- Mapeo de entidades -->
+        <mapping class="org.example.entities.empleado"/>
+
+    </session-factory>
+</hibernate-configuration>
+
